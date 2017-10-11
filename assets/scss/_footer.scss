@@ -1,0 +1,20 @@
+#main-footer {
+  background-color: $medium-gray;
+  padding: rem-calc(8 0);
+
+  #footer-nav {
+    li {
+      margin-right: $global-menu-margin;
+
+      a {
+        color: $black;
+      }
+    }
+  }
+
+  #copyright {
+    padding: $global-menu-padding;
+    line-height: 1;
+  }
+}
+

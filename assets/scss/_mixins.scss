@@ -1,0 +1,95 @@
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+
+// =============================================================================
+// Color: get colors of color map
+// =============================================================================
+
+@function color($which, $map: $color-palette) {
+    @return map-get($map, $which);
+}
+
+
+// =============================================================================
+// mixin for fade out the last line of a text container
+// =============================================================================
+
+@mixin fade-out-last-line($lineHeight: 1.2, $lineCount: 3, $fade-out-to-bg-color: white) {
+	$fade-height: $lineHeight*($lineCount+1)*1em;
+	$trans-array: rgba(255,255,255,0);
+	$num: $lineCount;
+	@while $num > 1 {
+		$trans-array: #{$trans-array},rgba(255,255,255,0),;
+
+		$num: $num - 1;
+	}
+	position: relative;
+	overflow: hidden;
+	max-height: $fade-height;
+	&:before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: linear-gradient(to bottom, $trans-array , $fade-out-to-bg-color);
+	}
+}
+
+// =============================================================================
+// Inline SVG Mixin
+// =============================================================================
+
+	// @url http://stackoverflow.com/a/35204306
+	@function svg-inline($string){
+		$result: str-replace($string, "<svg", "<svg xmlns='http://www.w3.org/2000/svg'");
+		$result: str-replace($result, '%', '%25');
+		$result: str-replace($result, '"', '%22');
+		$result: str-replace($result, "'", '%27');
+		$result: str-replace($result, ' ', '%20');
+		$result: str-replace($result, '<', '%3C');
+		$result: str-replace($result, '>', '%3E');
+		@return "data:image/svg+xml;utf8," + $result;
+	}

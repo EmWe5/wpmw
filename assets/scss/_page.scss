@@ -1,0 +1,39 @@
+$element-padding-small: rem-calc(30);
+$element-padding-medium: rem-calc(60);
+//$element-padding-large: rem-calc();
+
+h1 {
+  text-align: center;
+}
+
+.row-element {
+  padding-top: $element-padding-small/4;
+  padding-bottom: $element-padding-small/4;
+
+  &:first-child {
+    padding-top: $element-padding-small;
+  }
+
+  &:last-child {
+    padding-bottom: $element-padding-small;
+  }
+
+  @include breakpoint(medium) {
+    padding-top: $element-padding-medium/4;
+    padding-bottom: $element-padding-medium/4;
+
+    &:first-child {
+      padding-top: $element-padding-medium;
+    }
+
+    &:last-child {
+      padding-bottom: $element-padding-medium;
+    }
+  }
+}
+
+.row-breadcrumbs {
+  background-color: $light-gray;
+  margin: rem-calc(0 0 32);
+  padding: rem-calc(8 0);
+}

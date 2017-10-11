@@ -1,0 +1,1 @@
+<footer id="main-footer" itemscope itemtype="http://schema.org/WPFooter">    <div class="row column">        <nav class="float-left">            <?php wpmw_footer_navigation(); ?>        </nav>        <div id="copyright" class="float-right">&copy; 2014 - <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>    </div></footer><?php wp_footer(); ?></body></html>
