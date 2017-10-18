@@ -136,7 +136,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1;
-$header-margin-bottom: rem-calc(16);
+$header-margin-bottom: rem-calc(8);
 $header-styles: (
   'small': (
           'h1': ('font-size': 24, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
@@ -155,9 +155,9 @@ $header-styles: (
           'h6': ('font-size': 16, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom)
   ),
   'large': (
-          'h1': ('font-size': 26, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
-          'h2': ('font-size': 20, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
-          'h3': ('font-size': 20, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
+          'h1': ('font-size': 26, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': rem-calc(32)),
+          'h2': ('font-size': 22, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': rem-calc(16)),
+          'h3': ('font-size': 16, 'line-height': 1.6, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
           'h4': ('font-size': 16, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
           'h5': ('font-size': 16, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
           'h6': ('font-size': 16, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom)
@@ -167,7 +167,7 @@ $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: rem-calc(24);
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
@@ -184,9 +184,9 @@ $hr-border: 1px solid $medium-gray;
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
-$list-style-type: disc;
+$list-style-type: none;
 $list-style-position: outside;
-$list-side-margin: 1.25rem;
+$list-side-margin: 0;
 $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
@@ -822,12 +822,12 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $black;
-$titlebar-color: $white;
+$titlebar-background: $white;
+$titlebar-color: $black;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
-$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-color: $black;
+$titlebar-icon-color-hover: $primary-color;
 $titlebar-icon-spacing: 0.25rem;
 
 // 54. Tooltip

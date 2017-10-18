@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+    <div class="row-breadcrumbs hide-for-small-only">
+
+        <?php get_template_part('template-parts/page/nav', 'breadcrumbs') ?>
+
+    </div>
+
     <main id="main-content" class="row">
 
         <div id="article-wrapper" class="column small-12">
@@ -10,7 +16,6 @@
 
                     <article>
 
-                        <h1><?php the_title(); ?></h1>
                         <div class="article-content"><?php the_content(); ?></div>
 
                     </article>

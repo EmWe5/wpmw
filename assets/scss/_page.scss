@@ -6,6 +6,22 @@ h1 {
   text-align: center;
 }
 
+main {
+  ul {
+    li {
+      padding-left: rem-calc(16);
+
+      &:before {
+        content: "\f00c";
+        font-family: FontAwesome;
+        display: inline-block;
+        margin-left: rem-calc(-16);
+        width: rem-calc(24);
+      }
+    }
+  }
+}
+
 .row-element {
   padding-top: $element-padding-small/4;
   padding-bottom: $element-padding-small/4;

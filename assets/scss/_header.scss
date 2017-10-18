@@ -1,26 +1,30 @@
 #main-header {
   font-family: 'BrushStr', Helvetica, sans-serif;
 
+  .title-bar {
+
+  }
+
   .top-bar-left {
     position: relative;
 
-    #logo-image {
+    .logo-image {
       display: inline-block;
     }
 
-    #logo-text {
+    .logo-text {
       text-transform: uppercase;
       position: absolute;
       top: 50%;
       left: rem-calc(115);
       transform: translateY(-50%);
 
-      #headline {
+      .headline {
         font-size: rem-calc(28);
         letter-spacing: 0.02rem;
       }
 
-      #subheadline {
+      .subheadline {
         font-size: rem-calc(14);
       }
     }
@@ -83,7 +87,7 @@
       }
     }
 
-    #social-nav {
+    .social-nav {
       text-align: right;
 
       a {
