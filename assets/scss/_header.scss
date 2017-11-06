@@ -2,11 +2,7 @@
   font-family: 'BrushStr', Helvetica, sans-serif;
 
   .title-bar {
-
-  }
-
-  .top-bar-left {
-    position: relative;
+    justify-content: space-between;
 
     .logo-image {
       display: inline-block;
@@ -14,89 +10,146 @@
 
     .logo-text {
       text-transform: uppercase;
-      position: absolute;
-      top: 50%;
-      left: rem-calc(115);
-      transform: translateY(-50%);
+      display: inline-block;
+      vertical-align: middle;
 
       .headline {
-        font-size: rem-calc(28);
-        letter-spacing: 0.02rem;
+        font-size: rem-calc(14);
       }
 
       .subheadline {
-        font-size: rem-calc(14);
+        font-size: rem-calc(12);
+      }
+    }
+
+    .menu-icon {
+      height: rem-calc(17);
+      &::after {
+        height: rem-calc(3);
       }
     }
   }
 
-  .top-bar-right {
-    a {
-      color: $black;
+  #top-bar-container {
+    @include breakpoint(small only) {
+      position: absolute;
+      background-color: $white;
+      padding: 0;
+      text-align: center;
+      z-index: 99;
     }
 
-    #main-nav {
-      margin-top: rem-calc(16);
+    .top-bar-left {
+      position: relative;
 
-      li {
-        margin-left: $global-menu-margin;
+      .logo-image {
+        display: inline-block;
+      }
 
-        &.active {
-          a {
-            color: $primary-color;
+      .logo-text {
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        left: rem-calc(115);
+        transform: translateY(-50%);
 
-            &:before {
-              content: "";
-              position: absolute;
-              width: 100%;
-              height: rem-calc(2);
-              bottom: 0;
-              left: 0;
-              background-color: $primary-color;
-              visibility: visible;
-              transform: scaleX(1);
+        display: inline-block;
+        vertical-align: middle;
+
+        .headline {
+          font-size: rem-calc(28);
+          letter-spacing: 0.02rem;
+        }
+
+        .subheadline {
+          font-size: rem-calc(14);
+        }
+      }
+    }
+
+    .top-bar-right {
+      a {
+        color: $black;
+      }
+
+      #main-nav {
+        margin-top: rem-calc(16);
+
+        li {
+          @include breakpoint(medium) {
+            margin-left: $global-menu-margin;
+          }
+
+          @include breakpoint(small only) {
+            &:first-child {
+              border-top: rem-calc(1 solid $black);
+            }
+
+            border-bottom: rem-calc(1 solid $black);
+          }
+
+          &.active {
+            a {
+              color: $primary-color;
+
+              @include breakpoint(medium) {
+                &:before {
+                  content: "";
+                  position: absolute;
+                  width: 100%;
+                  height: rem-calc(2);
+                  bottom: 0;
+                  left: 0;
+                  background-color: $primary-color;
+                  visibility: visible;
+                  transform: scaleX(1);
+                }
+              }
             }
           }
         }
-      }
 
-      a {
-        position: relative;
-        text-decoration: none;
-        &:hover {
-          color: $primary-color;
+        a {
+          position: relative;
+          text-decoration: none;
+
+          @include breakpoint(medium) {
+            &:hover {
+              color: $primary-color;
+
+              &:before {
+                visibility: visible;
+                transform: scaleX(1);
+              }
+            }
+          }
 
           &:before {
-            visibility: visible;
-            transform: scaleX(1);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: rem-calc(2);
+            bottom: 0;
+            left: 0;
+            background-color: $primary-color;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
           }
         }
+      }
 
-        &:before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: rem-calc(2);
-          bottom: 0;
-          left: 0;
-          background-color: $primary-color;
-          visibility: hidden;
-          transform: scaleX(0);
-          transition: all 0.3s ease-in-out 0s;
+      .social-nav {
+        text-align: right;
+
+        a {
+          display: inline-block;
+          width: rem-calc(22);
+          height: rem-calc(22);
         }
       }
+
     }
-
-    .social-nav {
-      text-align: right;
-
-      a {
-        display: inline-block;
-        width: rem-calc(22);
-        height: rem-calc(22);
-      }
-    }
-
   }
 }
 

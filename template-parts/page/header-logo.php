@@ -2,7 +2,9 @@
     <?= wp_get_attachment_image( get_field('logo', 'option'), $logo_size ); ?>
 </a>
 
+<?php if ($logo_size == 'logo') { ?>
 <div class="logo-text">
     <div class="headline">Alexander Weisbein</div>
     <div class="subheadline">Kunstmaler &amp; Restaurator in München</div>
 </div>
+<?php } ?>

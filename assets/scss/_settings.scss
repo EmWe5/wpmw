@@ -120,7 +120,7 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 10px,
+  small: 16px,
   medium: 20px,
 );
 $grid-column-align-edge: true;
@@ -825,9 +825,9 @@ $thumbnail-radius: $global-radius;
 $titlebar-background: $white;
 $titlebar-color: $black;
 $titlebar-padding: 0.5rem;
-$titlebar-text-font-weight: bold;
+$titlebar-text-font-weight: normal;
 $titlebar-icon-color: $black;
-$titlebar-icon-color-hover: $primary-color;
+$titlebar-icon-color-hover: $black;
 $titlebar-icon-spacing: 0.25rem;
 
 // 54. Tooltip

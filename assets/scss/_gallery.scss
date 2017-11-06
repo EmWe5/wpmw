@@ -1,0 +1,14 @@
+.gallery {
+  .row-element {
+    figure {
+      text-align: center;
+    }
+
+    .figure-description {
+      @include breakpoint(small only) {
+        text-align: center;
+        margin-top: rem-calc(16);
+      }
+    }
+  }
+}

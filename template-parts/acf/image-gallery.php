@@ -19,7 +19,7 @@ $img_size = 'gallery';
                     <?= wp_get_attachment_image( $right_img_id, $img_size ) ?>
                 </figure>
 
-                <div class="column small-12 medium-3">
+                <div class="figure-description column small-12 medium-3">
                     <?= $desc; ?>
                 </div>
 

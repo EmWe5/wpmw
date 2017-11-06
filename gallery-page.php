@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-    <div class="row-breadcrumbs hide-for-small-only">
+    <div class="row-breadcrumbs">
 
         <?php get_template_part('template-parts/page/nav', 'breadcrumbs') ?>
 
